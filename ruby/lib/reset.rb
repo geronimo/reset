@@ -4,7 +4,7 @@ class Reset
   VERSION = '1.0.0'
 
   def initialize(list)
-    @values = list
+    @values = list.to_a.uniq
   end
 
   def include?(element)

@@ -5,6 +5,13 @@ require "minitest/autorun"
 require "reset"
 
 describe Reset do
+  describe ".new" do
+    it "removes all duplicates of the initial list of elements" do
+      @reset = Reset.new([1, 2, 2])
+      assert_equal @reset.size, 2
+    end
+  end
+
   describe "#include?" do
     before do
       @reset = Reset.new([1,2,3])

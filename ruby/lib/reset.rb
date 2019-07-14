@@ -46,6 +46,7 @@ class Reset
     reset = Reset.new(reset) unless reset.instance_of? Reset
     @values.all? { |elem| reset.include? elem }
   end
+  alias subset? subset
 
   ##
   # Tests if the reset contains the given element

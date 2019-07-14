@@ -47,14 +47,21 @@ class Reset
     @values.all? { |elem| reset.include? elem }
   end
 
+  ##
+  # Tests if the reset contains the given element
   def include?(element)
     @values.include? element
   end
 
+  ##
+  # Returns the size of the reset
   def size
     @values.size
   end
 
+  ##
+  # Adds a new element to the reset. If the element is already included,
+  # it ignores it.
   def add(element)
     unless @values.include? element
       @values << element
@@ -62,6 +69,8 @@ class Reset
     self
   end
 
+  ##
+  # Convert a reset to array
   def to_a
     @values
   end

@@ -20,4 +20,12 @@ class Reset
       @values << element
     end
   end
+
+  def to_a
+    return @values
+  end
+
+  def union(reset)
+    return Reset.new(@values + reset.to_a)
+  end
 end

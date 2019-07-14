@@ -40,4 +40,27 @@ describe Reset do
       assert_equal @reset.size, 1
     end
   end
+
+  describe "#union" do
+    it "should return only the unique members of each Reset" do
+      @reset_one = [1, 3]
+      @reset_two = [2, 4]
+      @result = @reset_one.union(@reset_two)
+      assert_equal @result.size, 4
+      assert @result.include? 1
+      assert @result.include? 3
+      assert @result.include? 2
+      assert @result.include? 4
+    end
+
+    it "should not include duplicates" do
+      @reset_one = [1, 2, 3]
+      @reset_two = [2, 3]
+      @result = @reset_one.union(@reset_two)
+      assert_equal @result.size, 3
+      assert @result.include? 1
+      assert @result.include? 2
+      assert @result.include? 3
+    end
+  end
 end

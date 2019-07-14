@@ -43,8 +43,8 @@ describe Reset do
 
   describe "#union" do
     it "should return only the unique members of each Reset" do
-      @reset_one = [1, 3]
-      @reset_two = [2, 4]
+      @reset_one = Reset.new [1, 3]
+      @reset_two = Reset.new [2, 4]
       @result = @reset_one.union(@reset_two)
       assert_equal @result.size, 4
       assert @result.include? 1
@@ -54,13 +54,26 @@ describe Reset do
     end
 
     it "should not include duplicates" do
-      @reset_one = [1, 2, 3]
-      @reset_two = [2, 3]
+      @reset_one = Reset.new [1, 2, 3]
+      @reset_two = Reset.new [2, 3]
       @result = @reset_one.union(@reset_two)
       assert_equal @result.size, 3
       assert @result.include? 1
       assert @result.include? 2
       assert @result.include? 3
+    end
+  end
+
+  describe "#intersection" do
+    it "should return only the unique members of each Reset" do
+      @reset_one = Reset.new [1, 2, 3]
+      @reset_two = Reset.new [2, 3, 4]
+      @result = @reset_one.intersection(@reset_two)
+      assert_equal @result.size, 2
+      assert @result.include? 3
+      assert @result.include? 2
+      assert !@result.include?(1)
+      assert !@result.include?(4)
     end
   end
 end

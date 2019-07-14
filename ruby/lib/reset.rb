@@ -22,10 +22,14 @@ class Reset
   end
 
   def to_a
-    return @values
+    @values
   end
 
   def union(reset)
-    return Reset.new(@values + reset.to_a)
+    Reset.new(@values + reset.to_a)
+  end
+
+  def intersection(reset)
+    @values.select { |elem| reset.include? elem }
   end
 end

@@ -86,6 +86,8 @@
     
     <li ><a href="#method-i-subset">#subset</a>
     
+    <li ><a href="#method-i-to_a">#to_a</a>
+    
     <li ><a href="#method-i-union">#union</a>
     
   </ul>
@@ -372,6 +374,39 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">subset</span>(<span class="ruby-identifier">reset</span>)
   <span class="ruby-identifier">reset</span> = <span class="ruby-constant">Reset</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">reset</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">reset</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Reset</span>
   <span class="ruby-ivar">@values</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span> <span class="ruby-identifier">reset</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">elem</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_a" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_a</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert a reset to array</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_a-source">
+            <pre><span class="ruby-comment"># File lib/reset.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span>
+  <span class="ruby-ivar">@values</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           

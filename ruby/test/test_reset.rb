@@ -39,6 +39,12 @@ describe Reset do
       @reset.add(1)
       assert_equal @reset.size, 1
     end
+
+    it "returns the updated reset" do
+      @reset = Reset.new([1])
+      result = @reset.add(2)
+      assert_equal @reset.object_id, result.object_id
+    end
   end
 
   describe "#union" do

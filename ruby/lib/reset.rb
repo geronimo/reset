@@ -19,6 +19,7 @@ class Reset
     unless @values.include? element
       @values << element
     end
+    self
   end
 
   def to_a

@@ -73,6 +73,16 @@ describe Reset do
       assert @result.include? 2
       assert @result.include? 3
     end
+
+    it "works with arrays" do
+      @reset= Reset.new [1, 2, 3]
+      @array = [2, 3]
+      @result = @reset.union(@array)
+      assert_equal @result.size, 3
+      assert @result.include? 1
+      assert @result.include? 2
+      assert @result.include? 3
+    end
   end
 
   describe "#intersection" do
@@ -80,6 +90,17 @@ describe Reset do
       @reset_one = Reset.new [1, 2, 3]
       @reset_two = Reset.new [2, 3, 4]
       @result = @reset_one.intersection(@reset_two)
+      assert_equal @result.size, 2
+      assert @result.include? 3
+      assert @result.include? 2
+      assert !@result.include?(1)
+      assert !@result.include?(4)
+    end
+
+    it "works with arrays" do
+      @reset= Reset.new [1, 2, 3]
+      @array = [2, 3, 4]
+      @result = @reset.intersection(@array)
       assert_equal @result.size, 2
       assert @result.include? 3
       assert @result.include? 2

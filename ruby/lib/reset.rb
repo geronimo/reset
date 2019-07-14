@@ -17,19 +17,33 @@ class Reset
     @values = list.to_a.uniq
   end
 
+  ##
+  # Returns a new Reset containing the unique members of self and
+  # the reset sent as parameter.
   def union(reset)
+    reset = Reset.new(reset) unless reset.instance_of? Reset
     Reset.new(@values + reset.to_a)
   end
 
+  ##
+  # Returns a new Set of all objects that are members of both sets.
   def intersection(reset)
+    reset = Reset.new(reset) unless reset.instance_of? Reset
     Reset.new(@values.select { |elem| reset.include? elem })
   end
 
+  ##
+  # Returns a new Set of all members of the first set
+  # that are not part of the second set.
   def difference(reset)
+    reset = Reset.new(reset) unless reset.instance_of? Reset
     Reset.new(@values.select { |elem| !reset.include?(elem) })
   end
 
+  ##
+  # Tests whether the first set is a subset of the second set.
   def subset(reset)
+    reset = Reset.new(reset) unless reset.instance_of? Reset
     @values.all? { |elem| reset.include? elem }
   end
 

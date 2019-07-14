@@ -6,7 +6,7 @@ require "hoe"
 Hoe.plugin :minitest
 
 Hoe.spec "reset" do
-  developer("Someone", "someone@example.com")
+  developer("Geronimo De Abreu Romero", "geronimodeabreu@gmail.com")
   license 'MIT'
 end
 

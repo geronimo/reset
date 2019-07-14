@@ -76,4 +76,28 @@ describe Reset do
       assert !@result.include?(4)
     end
   end
+
+  describe "#difference" do
+    it "should return all members of the first reset that are not in the second" do
+      @reset_one = Reset.new [1, 2, 3]
+      @reset_two = Reset.new [2, 3, 4]
+      @result = @reset_one.difference(@reset_two)
+      assert_equal @result.size, 1
+      assert @result.include?(1)
+      assert !@result.include?(3)
+      assert !@result.include?(2)
+      assert !@result.include?(4)
+    end
+
+    it "should return all members of the first reset that are not in the second (case #2)" do
+      @reset_one = Reset.new [1, 2, 3]
+      @reset_two = Reset.new [2, 3, 4]
+      @result = @reset_two.difference(@reset_one)
+      assert_equal @result.size, 1
+      assert @result.include?(4)
+      assert !@result.include?(1)
+      assert !@result.include?(2)
+      assert !@result.include?(3)
+    end
+  end
 end

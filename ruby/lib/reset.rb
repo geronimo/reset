@@ -30,6 +30,10 @@ class Reset
   end
 
   def intersection(reset)
-    @values.select { |elem| reset.include? elem }
+    Reset.new(@values.select { |elem| reset.include? elem })
+  end
+
+  def difference(reset)
+    Reset.new(@values.select { |elem| !reset.include?(elem) })
   end
 end

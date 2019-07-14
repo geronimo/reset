@@ -10,6 +10,11 @@ describe Reset do
       @reset = Reset.new([1, 2, 2])
       assert_equal @reset.size, 2
     end
+
+    it "creates an empty reset when created with no parameters" do
+      @reset = Reset.new
+      assert_equal @reset.size, 0
+    end
   end
 
   describe "#include?" do

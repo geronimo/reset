@@ -74,6 +74,10 @@
     
     <li ><a href="#method-c-new">::new</a>
     
+    <li ><a href="#method-i-2B">#+</a>
+    
+    <li ><a href="#method-i-2D">#-</a>
+    
     <li ><a href="#method-i-add">#add</a>
     
     <li ><a href="#method-i-difference">#difference</a>
@@ -183,6 +187,62 @@
        </header>
 
     
+      <div id="method-i-2B" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">+</span><span
+            class="method-args">(reset)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Reset.html#method-i-union">union</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-2D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">-</span><span
+            class="method-args">(reset)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Reset.html#method-i-intersection">intersection</a>
+        </div>
+        
+      </div>
+
+    
       <div id="method-i-add" class="method-detail ">
         
         <div class="method-heading">
@@ -202,7 +262,7 @@
 
           
           <div class="method-source-code" id="add-source">
-            <pre><span class="ruby-comment"># File lib/reset.rb, line 65</span>
+            <pre><span class="ruby-comment"># File lib/reset.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add</span>(<span class="ruby-identifier">element</span>)
   <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@values</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">element</span>
     <span class="ruby-ivar">@values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">element</span>
@@ -238,7 +298,7 @@
 
           
           <div class="method-source-code" id="difference-source">
-            <pre><span class="ruby-comment"># File lib/reset.rb, line 37</span>
+            <pre><span class="ruby-comment"># File lib/reset.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">difference</span>(<span class="ruby-identifier">reset</span>)
   <span class="ruby-identifier">reset</span> = <span class="ruby-constant">Reset</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">reset</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">reset</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Reset</span>
   <span class="ruby-constant">Reset</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@values</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">reset</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">elem</span>) })
@@ -272,7 +332,7 @@
 
           
           <div class="method-source-code" id="include-3F-source">
-            <pre><span class="ruby-comment"># File lib/reset.rb, line 52</span>
+            <pre><span class="ruby-comment"># File lib/reset.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">include?</span>(<span class="ruby-identifier">element</span>)
   <span class="ruby-ivar">@values</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">element</span>
 <span class="ruby-keyword">end</span></pre>
@@ -305,7 +365,7 @@
 
           
           <div class="method-source-code" id="intersection-source">
-            <pre><span class="ruby-comment"># File lib/reset.rb, line 29</span>
+            <pre><span class="ruby-comment"># File lib/reset.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intersection</span>(<span class="ruby-identifier">reset</span>)
   <span class="ruby-identifier">reset</span> = <span class="ruby-constant">Reset</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">reset</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">reset</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Reset</span>
   <span class="ruby-constant">Reset</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@values</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span> <span class="ruby-identifier">reset</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">elem</span> })
@@ -314,6 +374,10 @@
           
         </div>
 
+        
+        <div class="aliases">
+          Also aliased as: <a href="Reset.html#method-i-2D">-</a>
+        </div>
         
 
         
@@ -339,7 +403,7 @@
 
           
           <div class="method-source-code" id="size-source">
-            <pre><span class="ruby-comment"># File lib/reset.rb, line 58</span>
+            <pre><span class="ruby-comment"># File lib/reset.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
   <span class="ruby-ivar">@values</span>.<span class="ruby-identifier">size</span>
 <span class="ruby-keyword">end</span></pre>
@@ -372,7 +436,7 @@
 
           
           <div class="method-source-code" id="subset-source">
-            <pre><span class="ruby-comment"># File lib/reset.rb, line 44</span>
+            <pre><span class="ruby-comment"># File lib/reset.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">subset</span>(<span class="ruby-identifier">reset</span>)
   <span class="ruby-identifier">reset</span> = <span class="ruby-constant">Reset</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">reset</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">reset</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Reset</span>
   <span class="ruby-ivar">@values</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span> <span class="ruby-identifier">reset</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">elem</span> }
@@ -438,7 +502,7 @@
 
           
           <div class="method-source-code" id="to_a-source">
-            <pre><span class="ruby-comment"># File lib/reset.rb, line 74</span>
+            <pre><span class="ruby-comment"># File lib/reset.rb, line 76</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span>
   <span class="ruby-ivar">@values</span>
 <span class="ruby-keyword">end</span></pre>
@@ -480,6 +544,10 @@
           
         </div>
 
+        
+        <div class="aliases">
+          Also aliased as: <a href="Reset.html#method-i-2B">+</a>
+        </div>
         
 
         

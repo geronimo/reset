@@ -24,6 +24,7 @@ class Reset
     reset = Reset.new(reset) unless reset.instance_of? Reset
     Reset.new(@values + reset.to_a)
   end
+  alias + union
 
   ##
   # Returns a new Set of all objects that are members of both sets.
@@ -39,6 +40,7 @@ class Reset
     reset = Reset.new(reset) unless reset.instance_of? Reset
     Reset.new(@values.select { |elem| !reset.include?(elem) })
   end
+  alias - intersection
 
   ##
   # Tests whether the first set is a subset of the second set.

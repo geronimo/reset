@@ -10,4 +10,14 @@ class Reset
   def include?(element)
     @values.include? element
   end
+
+  def size
+    @values.size
+  end
+
+  def add(element)
+    unless @values.include? element
+      @values << element
+    end
+  end
 end

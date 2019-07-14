@@ -36,4 +36,8 @@ class Reset
   def difference(reset)
     Reset.new(@values.select { |elem| !reset.include?(elem) })
   end
+
+  def subset(reset)
+    @values.all? { |elem| reset.include? elem }
+  end
 end

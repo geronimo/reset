@@ -100,4 +100,18 @@ describe Reset do
       assert !@result.include?(3)
     end
   end
+
+  describe "#subset" do
+    it "returns true if the first reset is a subset of the second" do
+      @reset_one = Reset.new [1, 2, 3]
+      @reset_two = Reset.new [1, 2, 3, 4]
+      assert @reset_one.subset(@reset_two)
+    end
+
+    it "returns false if the first reset is NOT a subset of the second" do
+      @reset_one = Reset.new [1, 2, 5]
+      @reset_two = Reset.new [1, 2, 3, 4]
+      assert !@reset_one.subset(@reset_two)
+    end
+  end
 end
